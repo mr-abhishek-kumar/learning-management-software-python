@@ -1,0 +1,64 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}Tasks{% endblock %}
+{% block head1 %} <i class="fa-solid fa-pen"></i> Today's{% endblock %}    {% block head2 %}Tasks{% endblock %}
+
+{% block studentzone %}
+
+{% if not request.session.user %}
+    <script>
+        alert('You have to login first!')
+        location.href='/user/signin/'
+    </script>
+{% endif %}
+
+<div class="row mt-1">
+    <div class="col-sm-8 mx-auto p-4" style="background: rgb(235, 230, 230);">
+
+        <table  class="mx-auto table">
+            <tr>
+                <th>Title</th>
+                <th>Download</th>
+                <th>Submit Task</th>
+            </tr>
+
+            {% for i in tdata %}
+            <tr>
+                <td class="p-2">{{i.title}}</td>
+                <td class="p-2 ps-0"><a href="/{{i.task_file}}" class="btn  btn-primary">Download <i class="fa-solid fa-download"></i></a></td>
+                <td class="p-2 ps-0">
+                    <form method="POST" action="/student/stask/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="tid" value="{{i.id}}">
+                        <input type="hidden" name="title" value="{{i.title}}">
+                        <input type="file" name="fu">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+
+<div class="row mt-4">
+    <div class="col-sm-6 mx-auto">
+        <table class="table table-dark table-hover">
+
+            <tr>
+                <th>Task Title</th>
+                <th>Marks</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.title}}</td>
+                <td>{{i.marks}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+</div>
+
+{% endblock %}

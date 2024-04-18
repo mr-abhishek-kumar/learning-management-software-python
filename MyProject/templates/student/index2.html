@@ -1,0 +1,169 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head1 %} <i class="fa-solid fa-list liveToastBtn"></i>{% endblock %}    {% block head2 %}Dashboard{% endblock %}
+
+{% block studentzone %}
+
+<script>
+    // const toastTrigger = document.getElementsByClassName('liveToastBtn')
+    // const toastLiveExample = document.getElementById('liveToast')
+
+        const toastLiveExample = document.getElementById('liveToast')
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show()
+        })
+
+
+</script>
+
+<style>
+    .dash{
+        min-height: 180px;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        padding-top: 10%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 0px 1px white;
+        /* background: rgb(83, 63, 212); */
+        background: black;
+    }
+    .fosm:hover{
+        font-size: 50px !important;
+        color: rgb(217, 229, 0);
+        text-shadow: -5px -5px 10px rgb(55, 0, 255),5px 5px 10px rgb(0, 0, 255);
+
+    }
+
+    a{
+        color:grey ;
+        text-decoration: none;
+    }
+
+</style>
+
+<!-- <div class="text-center txt-mycolo fs-2 bg-mycolor row">
+    <div class="col-12">
+        <i class="fa-solid fa-list"></i> Dashboard
+    </div>
+</div> -->
+
+
+<div class="row p-2" style="background: black;">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 col-sm-12 liveToastBtn" onmouseover="toastex()">
+                <a href="/student/lectures">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-video"></i><br/>
+                        Lectures
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 liveToastBtn">
+                <a href="/student/notes">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-book-open fosm"></i><br/>
+                        E Notes
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 liveToastBtn">
+                <a href="/student/tasks">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-pen fosm"></i><br/>
+                        Tasks
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 liveToastBtn">
+                <a href="/student/batches">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-tv fosm"></i><br/>
+                        Upcoming Batches
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12 liveToastBtn">
+                <a href="/student/liveclasses">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-camera fosm"></i><br/>
+                        Live Classes | Timing
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/softwarekit">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-download fosm"></i><br/>
+                        Software Kit
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/uprofile">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-lock fosm"></i><br/>
+                        Update Profile
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/logout">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-power-off fosm"></i><br/>
+                        Log Out
+                    </p>
+                </a>
+            </div>
+
+
+
+
+            <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
+            <div class="text-light" onmouseover="alertfun()" >
+                Click Me
+            </div>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <img src="..." class="rounded me-2" alt="...">
+                  <strong class="me-auto">Bootstrap</strong>
+                  <small>11 mins ago</small>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  Hello, world! This is a toast message.
+                </div>
+              </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

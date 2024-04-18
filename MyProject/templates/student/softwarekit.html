@@ -1,0 +1,41 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}Software Kit{% endblock %}
+{% block head1 %} <i class="fa-solid fa-download"></i> Software{% endblock %}    {% block head2 %}Kit{% endblock %}
+
+{% block studentzone %}
+
+{% if not request.session.user %}
+    <script>
+        alert('You have to login irst!')
+        location.href='/user/signin/'
+    </script>
+{% endif %}
+
+<div class="row t1 p-5 pb-0" style="background: rgb(198, 198, 198);">
+    <div class="col-sm-8 mx-auto">
+        <!-- Start Software Card -->
+      {% for i in sdata %}
+        <div class="card mb-5">
+            <div class="row g-0">
+              <div class="col-md-2">
+                <img src="/{{i.software_picture}}" class="img-thumbnail rounded-start" alt="software image" style="max-height: 156px;" >
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h5 class="card-title mb-0">{{i.software_title}} </h5>
+                  <p class="card-text">{{i.software_description}} </p>
+                  <!-- <button class=" btn mb-2" style="background: rgb(5, 142, 5);color: white;">Download <i class="fa fa-download"></i> </button> -->
+                  <a href="{{i.software_link}}" class="btn btn-success">Download <i class="fa fa-download"></i></a>
+                  <p class="card-text"><small class="text-body-secondary"> Added Date: {{i.software_date}} </small></p>
+                </div>
+                <!-- <div class="col-md-2">
+                </div> -->
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- End Software Card -->
+    </div>
+</div>
+{% endblock %}

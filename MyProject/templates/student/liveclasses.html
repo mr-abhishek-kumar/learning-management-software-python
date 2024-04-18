@@ -1,0 +1,25 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}Live Classes{% endblock %}
+{% block head1 %} <i class="fa-solid fa-camera"></i> Live{% endblock %}    {% block head2 %}Classes{% endblock %}
+
+{% block studentzone %}
+
+{% if not request.session.user %}
+    <script>
+        alert('You have to login irst!')
+        location.href='/user/signin/'
+    </script>
+{% endif %}
+
+<div class="row mt-5" >
+    {% for i in data %}
+    <div class="col-sm-4 mx-auto p-4" style="background: rgb(216, 219, 221); line-height: 40px;">
+        <b>Your Batch: </b> {{i.batch}}<br/>
+        <b>Time: </b>{{i.timing }}<br/>
+        <a href="{{i.clink}}" target="_blank" class="btn btn-sm px-4 btn-primary rounded-pill ">Join</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

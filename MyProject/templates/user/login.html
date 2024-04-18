@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+
+<div class="row my-5">
+    <div class="col-lg-4 col-sm-6 form mx-auto text-center py-4 px-4" style="min-height: 200px; box-shadow: 0px 0px 7px 4px rgb(85, 80, 80);">
+        <h4>Welcome to Indeed Learning</h1>
+            <p class="mb-4">Login to your Online Learning</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <i class="input-group-text"><i class="fa fa-envelope"></i>     </i>
+                <input class="form-control rounded rounded-end-4" placeholder="Enter your user ID" type="text" name="email">
+            </div>
+
+            <div class="input-group mb-4">
+                <i class="input-group-text"><i class="fa fa-key"></i>     </i>
+                <input class="form-control rounded rounded-end-4" placeholder="Type Password" type="text" name="paswd">
+            </div>
+            <input class=" bg-primary btn btn-primary px-5  rounded rounded-2" value="Login" type="submit">
+        </form>
+        <p class="mt-4">Or <i><a class="text-primary" href="/student/uprofile/">Forgot password</a></i></p>
+        <hr>
+        <p>Don't have an account?<i class="text-primary"><a class="text-primary" href="/user/signup/">Sign Up</a></i></p>
+    </div>
+</div>
+
+{% endblock %}

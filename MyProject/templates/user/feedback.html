@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<div class="row" style="background: rgb(247, 247, 248);">
+    <div class="col-lg-9 col-sm-8 mx-auto">
+        <div class="row text-center my-4 mb-2 bg-secondar">
+            <h2 class="my-0">Your Valuable Feedback</h2>
+            <p class="my-0">We appreceiate to your valuable feedback and we are always focused on in</p>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row p-4 pb-5 mb-5 mt-3" style="background: white;box-shadow: 0px 0px 10px 1px black;">
+                <div class="col-lg-6 col-sm-12 rimg bg-succes">
+                    <img src="{% static 'images/rimg.jpg' %}" class="img-fluid" style="max-height: 400px; min-width: 100%;">
+                </div>
+                <div class="col-lg-6 col-sm-12 bg-warnin p-4 pt-0 pb-0">
+                    <h4>Add yor feedback</h4>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            Your Name:<br/>
+                            <input type="text" class="form-control" required placeholder="Enter Your Name*" name="uname">
+                        </div>
+                        <div class="col-6">
+                            Your City:<br/>
+                            <input type="text" class="form-control required" placeholder="Enter Your City Name*" name="city">
+                        </div>
+                    </div>
+                    You're From:<br/>
+                    <input type="text" class="form-control mb-4" required placeholder="Enter Your College/Institute Name*" name="clg">
+                    Your Feedback:<br/>
+                    <textarea class="form-control mb-4" rows="3" required placeholder="Your Valuable Feedback*" name="msg"></textarea>
+                    <input type="submit" value="Save" class="btn btn-primary px-5">
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

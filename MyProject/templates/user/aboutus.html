@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<div class="text-center fs-2  m-0">About <b  style="text-decoration: underline; color: blue;" >Us</b> </div>
+<div class="row my-4" style="background: rgb(239, 240, 243);">
+
+<div class="row bg-light py-3">
+    <div class="col-sm-5 mx-auto">
+            <!-- Abou Me -->
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/aboutmypic.jpg' %}" class="img-fluid rounded-start" alt="..." style="min-height: fit-content;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Er. Abhishek Kumar Mishra</h5>
+                      <p class="card-text">Hi, Myself is Abhishek Kumar. I'm student of computer science and engineering. Currently i'm persuing diploma in cs 2nd year from Government Polytechnic College Shahhajanpur.</p>
+                      <p class="card-text">
+                        <small class="text-body-secondary"><i class="fa fa-phone"></i> 91-9793409349</small><br/>
+                        <small class="text-body-secondary"><i class="fa fa-envelope"></i> abhishramishra07@gmail.com</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- End Abou Me -->
+    </div>
+    <div class="col-sm-5 mx-auto">
+            <!-- Abou Me -->
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/spnclgpic1.jpg' %}" class="img-fluid rounded-start" alt="..." style="min-height: 100%;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Techpile Tech. Pvt Ltd.</h5>
+                      <p class="card-text">After completing fourth semester, i have choosen <b>Techpile </b> for my 45 days summer training programm where i have learnt a lot technologies and build this <b>LMS: Learning Management Software</b> whic may be helpful in digital education System </p>
+                      <p class="card-text">
+                        <small class="text-body-secondary"><i class="fa fa-phone"></i> 91-9793409349</small><br/>
+                        <small class="text-body-secondary"><i class="fa fa-envelope"></i> abhishramishra07@gmail.com</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- End Abou Me -->
+    </div>
+</div>
+
+{% endblock %}

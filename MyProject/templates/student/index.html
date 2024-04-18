@@ -1,0 +1,154 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head1 %} <i class="fa-solid fa-list"></i>{% endblock %}    {% block head2 %}Dashboard{% endblock %}
+
+{% block studentzone %}
+
+{% if not request.session.user %}
+    <script>
+        alert('You have to login irst!')
+        location.href='/user/signin/'
+    </script>
+{% endif %}
+
+<style>
+    .dash{
+        min-height: 180px;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        padding-top: 10%;
+        border-radius: 10px;
+        box-shadow: -6px 6px 2px 0px black;
+        /* background: rgb(83, 63, 212); */
+        background: repeating-linear-gradient(45deg, rgb(63, 59, 59) 5px,black 10px);
+        /* transition: all 1s; */
+    }
+
+    .fosm{
+        color: rgb(137, 185, 239);
+        transition: all 700ms;
+    }
+
+    .fosm:hover{
+        font-size: 60px !important;
+        color: blue;
+        text-shadow: -4px -4px 10px blue,4px 4px 10px blue;
+        transition: all 700mss;
+    }
+    .lgout{
+        color: rgb(239, 137, 137);
+        transition: all 700ms;
+    }
+    .lgout:hover{
+        font-size: 60px !important;
+        color: red;
+        text-shadow: -4px -4px 10px red,4px 4px 10px red;
+        transition: all 700mss;
+    }
+
+    a{
+        color:grey ;
+        text-decoration: none;
+    }
+
+</style>
+
+<!-- <div class="text-center txt-mycolo fs-2 bg-mycolor row">
+    <div class="col-12">
+        <i class="fa-solid fa-list"></i> Dashboard
+    </div>
+</div> -->
+
+
+<div class="row p-2" style="background: rgb(235, 229, 229);">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/lectures">
+                    <p class="dash my-4" onmouseover="fosm()">
+                        <i class="fa-solid fa-video fosm"></i><br/>
+                        Lectures
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/notes">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-book-open fosm"></i><br/>
+                        E Notes
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/tasks">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-pen fosm"></i><br/>
+                        Tasks
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/batches">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-tv fosm"></i><br/>
+                        Upcoming Batches
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/liveclasses">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-camera fosm"></i><br/>
+                        Live Classes | Timing
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/softwarekit">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-download fosm"></i><br/>
+                        Software Kit
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/uprofile">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-lock fosm"></i><br/>
+                        Update Profile
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="/student/logout">
+                    <p class="dash my-4">
+                        <i class="fa-solid fa-power-off lgout"></i><br/>
+                        Log Out
+                    </p>
+                </a>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+<!-- <script>
+    function fosm(){
+        document.getElementsByClassName("fa-solid").style.fontSize="70px";
+    }
+</script> -->
+{% endblock %}

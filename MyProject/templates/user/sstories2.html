@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<style>
+
+    .stuprof{
+    height:200px;
+    width:200px;
+    border-radius:0%;
+  }
+  
+    .company_picture{
+    width:100px;
+    height:30px;
+    }
+    .college_picture{
+    width:100px;
+    height:30px;
+    }
+  </style>
+
+
+
+<div class="text-center fs-2 mb-3">Success <b  style="text-decoration: underline; color: blue;" >Stories</b> </div>
+    <div class="row">
+        <div class="col-sm-10 mx-auto">
+          <form method="get">  
+            <div class="row">
+                <div class="col-sm-5">
+                    College
+                    <select class="form-control" name="college">
+                        <option> --select--</option>
+                        {% for c in cd %}
+                        <option value="{{c.id}}" >{{c.college_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-5">
+                    Training Session
+                    <select class="form-control" name="year">
+                        <option> --select--</option>
+                        {% for s in sd %}
+                        <option value="{{s.id}}">{{s.session}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" value="Search" class="form-control text-light bg-mycolor mt-4">
+                </div>
+            </div>
+          </form> 
+        </div>
+    </div>
+
+
+<div class="row my-5 pt-5  px-5" style="background: rgb(247, 245, 245);">
+    {% for p in pd %}
+<!--Start Cards-->
+    <div class="col-lg-2 col-md-4 col-sm-6 px-0 text-center py-3 mb-5 mx-5" style="background: white; box-shadow: 0px 0px 10px 2px rgb(97, 95, 95);" >
+      <img  class="stuprof mb-2 img-card-top" src="/{{p.student_picture}}" alt="instructor's pic"><br/>
+      <b  class="stuname text-primary">{{p.student_name}}</b> &nbsp; {{p.session}}
+      <!-- <p  class="session mt-2 mb-1  "><b>Session: </b>{{p.session}}</p> -->
+      <p  class="batch mt-0 mb-1"><b>Batch: </b>{{p.batch}}</p>
+      <p  class="college mt-0 mb-2"><b>College: </b>{{p.college}}</p>
+      <!-- <p class="m-0 p-0 fs-1 text-primary"> &darr;</p> -->
+      <p class="company_name text-center mt-0 mb-2"><b class="m-0 p-0">Company:<br/></b>{{p.company_name}}</p>
+      <img class="company_picture" src="/{{p.company_picture}}" alt="placement company"><br/>
+    </div>
+<!--End Cards-->
+    {% endfor %}
+  </div>
+
+
+<!-- EndMyCardNew ...........................................-->
+
+{% endblock %}

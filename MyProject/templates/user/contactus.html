@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<h1 class="text-danger text-center">Contact Us</h1>
+
+<div class="row contactus p-5" style="background:rgb(234, 227, 227);">
+    <div class="col-sm-12 col-lg-3 text-center left bg-color" style="background:white;">
+      <b class="fa fa-location-dot"></b><br/>
+      <h4>Address</h4>
+      Kant shahjahanpur<br/>
+      Uttar Pradesh<br/><br/>
+
+      <b class="fa fa-phone-alt"></b><br/>
+      <h4>Phone</h4>
+      +91 9793409349<br/>
+      +91 8174077846<br/><br/>
+
+      <b class="fa fa-envelope"></b><br/>
+      <h4>Email</h4>
+      <p>
+        @abhishramishra07@gmail.com
+      </p>
+    </div>
+
+    <div class="col-sm-12 col-lg-6 mx-auto " style="background:white;">
+      <div class="row text-center">
+        <div class="col-12">
+          <h3 class="mb-0 text-dark">Contact us</h3>
+          <p class="mt-0">If you have any work from me Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit incidunt ab quibusdam recusanda.</p>
+        </div>
+      </div>
+      <div class="row">
+<!--       Start Contact form-->
+        <form method="post"> 
+          {% csrf_token %}
+          <div class="col-12 pb-3">
+            <div class="input-group my-3">
+              <i class="input-group-text fa fa-user"></i>
+              <input type="text" placeholder="Enter your name" class="form-control bg-light" required name="name">
+            </div>
+            <div class="input-group my-3">
+              <i class="input-group-text fa fa-envelope"></i>
+              <input type="email" placeholder="Enter your email" class="form-control bg-light" required name="email">
+            </div>
+            <div class="input-group my-3">
+              <i class="input-group-text fa fa-phone-alt"></i>
+              <input type="number" placeholder="Enter your phone No.." class="form-control bg-light" required name="number">
+            </div>
+            <div class="input-group">
+              <i class="input-group-text fa fa-message"></i>
+              <textarea class="form-control bg-light" placeholder="Enter your Message...." required name="msg"></textarea>
+            </div>
+            <div class="input-group my-3">
+              <input type="submit" value="Send Message" class="form-control text-light bg-primary w-50">
+            </div>
+            
+          </div>
+        </form>
+<!--        End Contact form-->
+      </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

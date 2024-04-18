@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexPage/HomePage</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}"></head>
+<style>
+
+    :root{
+    --bgcolor:linear-gradient(to right,rgb(55, 6, 234), rgba(0,242,254,1),rgb(8, 12, 239));
+
+    --txtcolor:aqua;
+    }
+    .bg-mycolor{
+    background:var(--bgcolor) !important;
+    }
+    .txt-mycolor{
+    color:var(--txtcolor);
+    }
+
+
+    .t1{
+    font-size:15px;
+    text-align: center;
+    }
+    .t2 a{
+      color:white;
+      font-size:15px;
+      color:white;
+      margin-right:30px;
+      padding-left:15px;
+      padding-right:15px;
+      border-radius:20px;
+      box-shadow:0px 7px 6px 0px black;
+      transition:all 1s; 
+    }
+    .fa-brands{
+    padding:.3%;
+    font-size:20px;
+    margin-right:5%;
+    border-radius: 100%;
+    transition:all 1s;
+    }
+    .fa-brands:hover{
+    transform:rotate(360deg);
+    color:blue;
+    border: 1px solid blue;
+    background:white;
+    transition:all 1s;
+    }
+    a{
+    text-decoration:none;
+    color:white !important;
+    }
+
+    #menu ul li a{
+        font-size:14px;
+        color:white;
+        margin-right:30px;
+        background:#c06969;
+        padding-left:15px;
+        padding-right:15px;
+        margin-top:15px;
+        margin-bottom:15px;
+        border-radius:20px;
+        box-shadow:10px 0px 5px 0px white,0px 7px 4px 0px black;
+        transition:all 1s;
+    }
+
+        #menu ul li a:hover{
+        box-shadow:-8px 0px 8px 3px white,4in 3px 5px 2px rgba(255,255,255,.5) ;
+        background:linear-gradient(to left, rgba(250,112,154,0.75), rgba(254,225,64,0.75));
+        color:black;
+        transition:all 1s;
+        }
+    #menu ul li i{
+      color: blue;
+    }   
+
+    .t3{
+        background: linear-gradient(45deg,rgb(0, 34, 255), rgba(0,242,254),rgb(0, 34, 255));
+    }
+  
+
+    .footer1{
+    min-height:300px;
+    }
+    .footer2{
+    min-height:50px;
+    margin-top:.3%;
+    }
+
+</style>
+<body>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+    <div class="container-fluid">
+
+        <div class="row t1 bg-mycolor text-light py-1 ">
+            <div class="col-lg-3 col-md-6 col-sm-12 mx-auto">
+                <a href="tel:9793409340"><i  class="mx-auto fa-solid fa-phone fa-spin"></i> +91-9793409349</a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <a href="mail to:abhishramishra07@gmail.com"><i class="fa-solid fa-envelope"></i> abhishramishra07.com</a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                This is an ISO certified website
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 ">
+                    <a href="https://youtube.com"><i class=" fa-brands fa-square-youtube"></i></a>
+                    <a href="https://instagram.com"><i class=" fa-brands fa-square-instagram"></i></a>
+                    <a href="https://twitter.com"><i class="bg-primary fa-brands fa-square-twitter"></i></a>
+                    <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://whatsapp.com"><i class="text-success fa-brands fa-square-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="row t2 py-0" >
+          <div class="col-sm-10 mx-auto">
+              <div class="row py-0">
+                <div class="col-sm-4 fs-2 mx-auto">
+                  Indeed <b style="color:blue;margin-bottom: 0px;padding-bottom: 0px;line-height: 0px;"><u style="padding-bottom: 0px;margin-bottom: 0px;line-height: 0px;">Learning</u></b><i class="fa-solid fa-laptop-file"></i>
+                  <p style="color: red; font-size: 15px; margin-top:0px;padding-top:0px; line-height: 0px;" ><i>A Management Software</i></p>
+                </div>
+                <div class="col-sm-3 fs-5"><div class="mt-lg-3 text-center" >Manage Your Work At One Place</div></div>
+                <div class="col-sm-5 text-end pb-3" style="padding-top: 1%;">
+                  <a class="btn btn-sm bg-primary" href="/user/contactus"><i class="fa-solid fa-mobile-screen-button fa-beat-fade pe-1"></i>Contact Us</a>
+                  <a class="btn btn-sm bg-primary" href="/user/feedback"><i class="fa-regular fa-comment-dots fa-beat-fade pe-1"></i>Feedback</a>
+                  <a class="btn btn-sm bg-primary" href="/user/login"><i class="fa-solid fa-right-to-bracket fa-beat-fade pe-1"></i>Login</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!--        START MENU-->
+        <div class="row t3 bg-mycolor">
+          <div class="col-sm-8 mx-auto ">
+            <nav class="navbar navbar-expand-lg tex-danger p-0" id="menu">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center ps-5" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/user/index"><i class="fa fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/user/aboutus"><i class="fa fa-book me-1"></i>About Us</a>
+                    </li>
+                  
+
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/batches"><i class="fa fa-book-open me-1"></i>New Batches</a>
+                  </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/user/facility"><i class="fa fa-handshake me-1"></i>Our Facility</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/user/successtories"><i class="fa fa-check me-1"></i>Success Stories</a>
+                    </li>
+                  
+
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/registration"><i class="fa fa-user me-1"></i>Registration</a>
+                  </li>
+                  
+
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!--        END MENU-->
+
+
+    </div>
+
+    
+    <div class="row">
+       <div class="col-sm-12" style="min-height:400px;">
+            {% block childpage %}
+
+            {% endblock %}
+       </div>
+    </div>
+
+    <div class="row footer1 py-5 bg-dark text-light px-5">
+      <!-- Start Footer1 -->
+      <div class="col-3">
+        <h1>Indeed Learning</h1>
+        <p style="text-transform: capitalize;" >Indeed learning is a learning plateform where you can easily access the popular books ebooks..</p>
+      </div>
+      <div class="col-3">
+        <h3>USEFUL LINKS</h3>
+        <hr/>
+        <h5>Home</h5><hr/>
+        <h5>About Us</h5><hr/>
+        <h5>Services</h5><hr/>
+        <h5>Career</h5><hr/>
+        <h5>Contact</h5><hr/>
+      </div>
+      <div class="col-3">
+        <h5>OUR SOCIAL SITES</h5><hr/>
+        <a href="https://youtube.com"><i class=" fa-brands fa-square-youtube"></i></a>
+        <a href="https://instagram.com"><i class=" fa-brands fa-square-instagram"></i></a>
+        <a href="https://twitter.com"><i class="bg-primary fa-brands fa-square-twitter"></i></a>
+        <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://whatsapp.com"><i class="text-success fa-brands fa-square-whatsapp"></i></a>
+      </div>
+      <div class="col-3">
+        <h5>POPULER</h5><hr/>
+        <h5>INDEED LEARNING</h5><hr/>
+        <h5>TECHNICAL ABHI</h5><hr/>
+        <h5>ANSH VER</h5><hr/>
+      </div>
+      <!-- End Footer1 -->
+    </div>
+
+    <div class="row footer2 bg-dark">
+      <p class="text-center text-light">&copy;Copyright <b>Indeed Learning.</b>All Rights Reserved<br/>
+        Designed by <b>Abhishek Kumar</b></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<style>
+
+  .stuprof{
+  height:200px;
+  width:200px;
+  border-radius:50%;
+}
+
+  .company_picture{
+  width:100px;
+  height:30px;
+  }
+  .college_picture{
+  width:100px;
+  height:30px;
+  }
+</style>
+
+
+<h1 class="text-danger text-center">Success Stories</h1>
+
+<!--Start OurInstructor-->
+<div class="row  px-5 bg-mycolor">
+    {% for p in pd %}
+<!--Start Cards-->
+    <div class="col-lg-2 col-md-4 col-sm-6 bg-light text-center py-3 mb-5 mx-auto" >
+      <img class="stuprof mb-2" src="/{{p.student_picture}}" alt="instructor's pic"><br/>
+      <b class="stuname text-primary">{{p.student_name}}</b>
+      <p class="session mt-2 mb-1"><b>Session: </b>{{p.session}}</p>
+      <p class="batch mt-0 mb-1"><b>Batch: </b>{{p.batch}}</p>
+      <p class="college mt-0 mb-2"><b>College: </b>{{p.college}}</p>
+      <img class="college_picture" src="/{{p.college_picture}}" alt="student's college"><br/>
+      <p class="m-0 p-0 fs-1 text-primary"> &darr;</p>
+      <p class="company_name text-center mt-0 mb-2"><b class="m-0 p-0">Company:<br/></b>{{p.company_name}}</p>
+      <img class="company_picture" src="/{{p.company_picture}}" alt="placement company"><br/>
+    </div>
+<!--End Cards-->
+    {% endfor %}
+  </div>
+<!-- End OurInstructor-->
+
+{% endblock %}

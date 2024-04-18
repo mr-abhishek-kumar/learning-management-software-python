@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<style>
+    .lbatches:hover{
+    box-shadow: 0px 0px 13px 3px black;
+    background: rgb(227, 228, 239);
+    transition: all 600ms;
+    /* background: url({% static 'images/mypic1.jpg' %}); */
+  }
+
+  .lbpic:hover{
+    transform: scale(1.1);
+    transition: all 500ms;
+    cursor: zoom-in;
+  }
+</style>
+
+
+
+<div class="text-center fs-2  m-0">New <b  style="text-decoration: underline; color: blue;" >Batches</b> </div>
+<div class="row my-4" style="background: rgb(239, 240, 243);">
+    <div class="col-sm-10 mx-auto">
+
+        <!--Start Bootstrap Card  -->
+        <div class="row p-4 pb-0">
+            {% for i in bdata %}
+            <div class="card mx-auto mb-4 p-0 lbatches" style="width: 18rem;">
+                <img src="/{{i.batchpic}}" class="card-img-top lbpic" alt="...">
+                <div class="card-body">
+                <p class="card-text txt-mycolor1"><big><b>{{i.name}}</b></big></p>
+                <b><i class="fa-solid fa-calendar-days"></i> Starting From:</b><br/>
+                <small class="text-danger">{{i.starting_date}}</small>
+                <a href="/user/signup/" class="btn btn-sm btn-primary">Signup</a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <!-- End of Bootsrrap Card -->
+
+
+    </div>
+</div>
+
+{% endblock %}

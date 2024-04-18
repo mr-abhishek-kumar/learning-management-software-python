@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block childpage %}
+<!--Stylesheet-->
+<style>
+  .active-carousel{
+    max-height:450px;
+    min-height:450px;
+    background: url("{% static 'images/rimg.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .card-title{  
+    color: red;
+  }
+  .card-text{
+    color: blue;
+  }
+  .instrutorprof{
+  height:70px;
+  width:70px;
+  border-radius:50%;
+}
+.instructorname{
+  margin-top:100px !important;
+  margin-bottom:100px;
+}
+
+  .instrutororg1{
+  width:100px;
+  height:30px;
+  }
+  .instrutororg2{
+  width:100px;
+  height:30px;
+  }
+
+  .teachcard{
+    box-shadow: 0px 0px 15px 2px rgb(42, 40, 40);
+    background: rgba(255, 255, 255, 0.9) !important;
+    transition: all 500ms;
+  }
+
+  .teachcard:hover{
+    transition: all 600ms;
+    box-shadow: 0px 0px 13px 5px black;
+    background: rgba(212, 203, 203, 0.8) !important;
+    /* color: white; */
+  }
+  .teachcardcon{
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .teachcardcon:hover{
+    background: url("{% static 'images/bookgif.gif' %}") !important;
+  }
+    /* background: url({% static 'images/mypic1.jpg' %}); */
+    /* background: url("{% static 'images/indeximg/slide1.jpg' %}") !important; */
+
+  .slideright:hover{
+    box-shadow: 0px 0px 13px 3px black;
+    background: rgb(227, 228, 239);
+    transition: all 500ms;
+  }
+  /* .lbatches{
+    border-left: 8px solid red ;
+    border-bottom: 8px solid blue; 
+  }  */
+
+  .lbatches:hover{
+    box-shadow: 0px 0px 13px 3px black;
+    background: rgb(227, 228, 239);
+    transition: all 600ms;
+    /* background: url({% static 'images/mypic1.jpg' %}); */
+  }
+  .lbpic{
+    border-radius:0px 6px 0px 0px !important ;
+  }
+  .lbpic:hover{
+    transform: scale(1.1);
+    transition: all 500ms;
+  }
+  .gsd{
+    background: rgb(231, 231, 218);
+    border-left: 2px solid grey;
+  }
+  .gsp{
+    font-size: 17px;
+    color: rgb(101, 99, 97);
+  }
+
+  @keyframes getstart {
+
+    from{
+      /* background: repeating-linear-gradient(30deg,blue 30px,red 40px,blue 30px) !important; */
+    }
+
+    to{
+      /* background: repeating-linear-gradient(45deg,red 50px,blue 55px,red 105px); */
+    }
+    
+  }
+  .gsdi{
+    animation-name: getstart;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+  }
+
+</style>
+<!--End of Stylesheet-->
+
+    <div class="row ">
+        <!--Start Slider-->
+        <div class="col-sm-9 p-0">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+
+              <div class="carousel-inner"> <!--style="height: 100%;"  -->
+
+                <div class="carousel-item active active-carousel pt-5" style="color: rgb(255, 255, 255);">
+                  <div class="row carouseldiv pt-5">
+                    <div class="col-sm-8 ps-5 mx-auto itemcontainer">
+                      <b class="text-danger"> your learning is waiting</b> 
+                      <h1 style="background: rgba(0, 0, 0, 0.2);">Add value to your knowledge with top it batches</h1>
+                      <p style="background: rgba(0, 0, 0, 0.5);">Master in-demand skills and power ahead to become a developer. </p>
+                      <a class="btn btn-primary" href="/user/batches/">Explore New Batches &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+
+                {% for i in sd %}
+                  <div class="carousel-item p-0">
+                    <img src="/{{i.slider_picture}}" class="d-block w-100 m-0" alt="slider's pic" style="height: 450px;"  >  <!--style="max-height: 450px;"-->
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="text-dark">{{i.headlines}}</h5>
+                      <p class="text-primary">{{i.slider_dec}}</p>
+                    </div>
+                  </div>
+
+                {% endfor %}
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+        </div>
+        <!--End Slider-->
+        <div class="col-sm-3" style="background: rgb(243, 241, 243);">
+          <div class="fs-3 text-center">New <b style="color: blue; text-decoration: underline;">Batches</b></div>
+          <marquee  direction="down" onmouseover="stop()" onmouseleave="start()" height="400px" behavior="alternate">
+            <!--        Start Card-->
+
+            <a href="/user/signup/">
+            {% for i in nbd %}
+
+            <div class="card mb-3 slideright" title="Do pre-registeration first to get acsess of {{i.name}} course">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/{{i.batchpic}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8" >
+                  <div class="card-body py-0">
+                    <h5 class="card-title txt-mycolor1 m-0 ">{{i.name}} </h5>
+                    <b><i class="fa-solid fa-calendar-days"></i> Starting From: </b>
+                    <samall class="card-text">{{i.starting_date}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            </a>
+            <!--        End Card-->
+          </marquee>
+        </div>
+    </div>
+
+    <!--row2-->
+
+<!--Start OurInstructor-->
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="col-sm-12 pt-3" style="background: white;">
+            <marquee  behavior="alternate"  scrollamount="8" onmouseover="stop()" onmouseleave="start()">
+              <h1 class=" fs-2 " style="width: fit-content; margin-left: 7%;">Our <b class="txt-mycolor1 text-decoration-underline">Instructors <i class="fa-solid fa-users"></i></b></h1>
+              <p style="background: rgb(240, 243, 244); width: fit-content; text-align: center; padding: 5px 25px;">We ensures your guaranteed success with my these skilled instructors.</p>
+            </marquee>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 px-5 pb-5" style="background: rgb(243, 241, 243);">
+        <div class="row">
+          <!-- Start Card -->
+          {% for i in teachd %}
+          <div class="teachcardcon col-lg-2 col-md-4 col-sm-6 px-0 mx-3 mt-5">
+            <div class="bg-light text-center pt-4 pb-2 teachcard m-0">
+              <img class="instrutorprof" src="/{{i.profile_pic}}" alt="instructor's pic"><br/>
+              <b class="instructorname">{{i.name}} </b>
+              <p class="quali p-0 m-0">{{i.qualification}} </p>
+              <b>Has been worked in:</b><br/>
+              <font size="50" color="purple">&darr;</font><br/>
+              <img class="instrutororg2 mb-3" src="/{{i.company_pic}} " alt="instructor's organization" ><br/>
+              <b><u>Subjects:</u></b><br/>
+              <p class="instrutorpostat">{{i.subject}}</p>
+            </div>
+          </div>
+          {% endfor %}
+          <!--End Cards-->
+        </div>
+      </div>
+    </div>
+<!-- End OurInstructor-->
+
+<!--Start Latest Batches-->
+<div class="row mb-4">
+  <div class="col-sm-12 pt-3 " style="background: white;">
+    <marquee  behavior="alternate" direction="right" onmouseover="stop()" onmouseleave="start()">
+      <h1 class=" fs-2 " style="width: fit-content; margin-left: 11%;">Latest <b class="txt-mycolor1 text-decoration-underline">Batches <i class="fa-solid fa-tv"></i></b></h1>
+      <p style="color: black; background: rgb(240, 243, 244); width: fit-content; text-align: center; padding: 5px 25px;">These are some upcoming Batches Which are started from given corresponding date.<br/> If you want to learn one of these tecnology, you can enroll in.</p>
+    </marquee>
+  </div>
+
+
+  <div class="col-sm-12 mx-auto" style="background: rgb(243, 241, 243);">
+      <div class="row p-4 pb-0 px-5">
+
+          {% for i in lbd %}
+          <div class="card mx-auto mb-4 p-0 lbatches" style="width: 18rem;">
+              <img src="/{{i.batchpic}}" class="card-img-top lbpic" alt="batchpic">
+              <div class="card-body">
+                <p class="card-text mb-0 text-danger "><big><b>{{i.bname}}</b></big></p>
+                <b><i class="fa-solid fa-calendar-days"></i> Started From:</b><br/>
+                <small class="txt-mycolor1 me-2">{{i.starting_date}}</small>
+
+                <!-- External -->
+                <!-- <a class="btn bg-primary btn-sm m-0" data-bs-toggle="collapse" href="#a{{i.id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">View More</a> -->
+                <!-- Popovers -->
+                <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="popover" data-bs-title="{{i.bname}}" data-bs-content="{{i.more}}">Know More</button>
+                <!-- End popovers -->
+                <!-- End external -->
+              </div>
+
+              <!-- External -->
+
+                <div class="collapse multi-collapse" id="a{{i.id}}">
+                  <div class="card card-body">
+                    {{i.name}}
+                  </div>
+                </div>
+          </div>
+          {% endfor %}
+
+      </div>
+  </div>
+</div>
+<!--End Latest Batches-->
+
+
+<!-- Start External Get Started -->
+<div class="row bg-succes  pb-5">
+  <h1 class="text-center mb-5">Get <u>Started</u></h1>
+  <div class="col-sm-11 mx-auto">
+    <div class="row">
+
+      <div class="col-sm-8 col-md-6 col-lg-3 mx-auto ps-5">
+        <div class="position-relative gsd ps-5 pb-3">
+          <div class="position-absolute top-0 start-0 translate-middle bg-primary gsdi fs-2" style="padding: 10px; padding-left: 15px; border-radius: 100%;">
+            <i class="fa fa-user-plus"></i>
+          </div>
+          <div class="bg-primar fs-4 ">
+            <U>Step-1</U><br/>
+            Register Yourself:
+            <p class="gsp">
+              Click on the <b>Registration</b> link and fill up your basic details. Teachers will approve your identity and wiil let you register.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8 col-md-6 col-lg-3 mx-auto ps-5">
+        <div class="position-relative gsd ps-5 pb-3 pe-1">
+          <div class="position-absolute top-0 start-0 translate-middle bg-primary gsdi fs-2 rounded rounded-5" style="padding-top: 8px; padding-bottom: 8px; padding-left: 15px; padding-right: 15px;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <div class="bg-primar fs-4 ">
+            <U>Step-2</U><br/>
+            Complete Payment: 
+            <p class="gsp">
+              After getting payment done, you will be sent a user id and password keep id and password note in to the notebooks 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8 col-md-6 col-lg-3 mx-auto ps-5">
+        <div class="position-relative gsd ps-5 pb-3 pe-1">
+          <div class="position-absolute top-0 start-0 translate-middle gsdi bg-primary gsdi fs-2 rounded rounded-5" ><i class="fa-solid fa-right-to-bracket p-3"></i></div>
+          <div class="bg-primar fs-4 ">
+            <U>Step-3</U><br/>
+            Login to System:
+            <p class="gsp">
+              Click on the <b>Login</b> link and login in to the system using you user id and password given by administrator during registration
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-8 col-md-6 col-lg-3 mx-auto ps-5">
+        <div class="position-relative gsd ps-5 pb-3">
+          <div class="position-absolute bg-primary gsdi top-0 start-0 translate-middle fs-2 rounded rounded-5"><i class="fa-solid fa-circle-play p-3"></i></div>
+          <div class="bg-primar fs-4 ">
+            <U>Step-4</U><br/>
+            Start Learning:
+            <p class="gsp">
+              After logging in to system, you can start your online learning through this <b>Learning Management Software</b> Plateform 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+<!-- End Get Started section -->
+
+<script>
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+
+{% endblock %}
