@@ -1,6 +1,6 @@
 # `Learning Management Software -- Indeed learning`
 
-# About the project :-
+# About the project 😉 :-
 
 + This web software falitates its user {Students, Teachers} to continue study online.
 + In this software there are _two zones_. One zone is for `individuals` and one another is for `students` only.
